@@ -49,8 +49,7 @@
 		<br>
 		<ol>
 			<li ng-repeat='pos in post | filter:title'>
-				<h3>{{pos.title}}</h3> -
-				<strong>{{pos.body}}</strong>
+				{{pos.title}} - <strong>{{pos.body}}</strong>
 			</li>
 		</ol>
 		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js'></script>
