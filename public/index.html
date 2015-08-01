@@ -1,13 +1,64 @@
 <!DOCTYPE html>
-<html lang='es' ng-app>
+<html lang='es' ng-app='app'>
 	<head>
 		<meta charset='utf-8'/>
 		<title>angular01</title>
 		<meta name='viewport' content='width=device-width,initial-scale=1,user-scalable=no'/>
+		<link rel="stylesheet" href="foundation.min.css" />
+    	<script src="modernizr.js"></script>
 	</head>
-	<body>
-	{{290-56}}
+	<body ng-controller='appController'>
+		<header>
+			<nav class="top-bar" data-topbar role="navigation">
+			  <ul class="title-area">
+			    <li class="name">
+			      <h1><a href="#">Sitio</a></h1>
+			    </li>
+			     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+			  </ul>
+
+			  <section class="top-bar-section">
+			    <!-- Right Nav Section -->
+			    <ul class="right">
+			      <li class="active"><a href="#">Boton derecho activo</a></li>
+			      <li class="has-dropdown">
+			        <a href="#">Boton lista</a>
+			        <ul class="dropdown">
+			          <li><a href="#">Primero en lista</a></li>
+			          <li class="active"><a href="#">Activo en lista</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+
+			    <!-- Left Nav Section -->
+			    <ul class="left">
+			      <li><a href="#">Boton izquierdo en lista</a></li>
+			    </ul>
+			  </section>
+			</nav>
+		</header>
+		<label>Buscar: </label>
+		<input type='text' ng-model='title'/>
+		<label>Título:</label>
+		<input type='text' ng-model='Nuevopost.title'/>
+		<label>Descripción</label>
+		<br>
+		<textarea ng-model='Nuevopost.body'></textarea>
+		<button ng-click='Crearpost()'>Guardar post</button>
+		<br>
+		<ol>
+			<li ng-repeat='pos in post | filter:title'>
+				<h3>{{pos.title}}</h3> -
+				<strong>{{pos.body}}</strong>
+			</li>
+		</ol>
 		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js'></script>
-	
+		<script src='controller.js'></script>
+		<script src="jquery.js"></script>
+    	<script src="foundation.min.js"></script>
+    	<script>
+      	$(document).foundation();
+    	</script>
 	</body>
 </html>
