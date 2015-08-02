@@ -20,6 +20,7 @@ angular.module('app',[])
 		})
 			.success(function(data,status,headers,conf){
 				$scope.post.push(data);
+				$scope.NuevoPost = {};
 			})
 			.error(function(err,status,headers,conf){
 				console.log(err)
